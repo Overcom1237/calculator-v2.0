@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Forms;
 
 namespace calculator
 {
@@ -8,12 +7,11 @@ namespace calculator
         
         float x, y;
         int action;
-        bool sing;
+        bool sing = true;
 
         public MainWindow()
         {
             InitializeComponent();
-
             
         }
         private void Button_poditive_or_paternal(object sender, RoutedEventArgs e)
@@ -23,7 +21,7 @@ namespace calculator
                 Tb.Text = "-" + Tb.Text;
                 sing = false;
             }
-            else if (!sing)
+            else
             {
                 Tb.Text = Tb.Text.Replace("-", "");
                 sing = true;
@@ -113,7 +111,9 @@ namespace calculator
 
         private void Button_sum(object sender, RoutedEventArgs e)
         {
-            if (x != 0) 
+            if (Tb.Text == "") return;
+            else
+           if (x != 0) 
             {
                 Col();
                 la.Content = y.ToString() + "+";
@@ -132,7 +132,9 @@ namespace calculator
 
         private void Button_difference(object sender,  RoutedEventArgs e)
         {
-            if (x != 0)
+            if (Tb.Text == "") return;
+            else
+           if (x != 0)
             {
                 Col();
                 la.Content = y.ToString() + "-";
@@ -151,7 +153,9 @@ namespace calculator
 
         private void Button_multiplier(object sender, RoutedEventArgs e)
         {
-            if (x != 0)
+            if (Tb.Text == "") return;
+            else
+           if (x != 0)
             {
                 Col();
                 la.Content = y.ToString() + "*";
@@ -170,6 +174,8 @@ namespace calculator
 
         private void Button_division(object sender, RoutedEventArgs e)
         {
+            if (Tb.Text == "") return;
+            else
             if (x != 0)
             {
                 Col();
