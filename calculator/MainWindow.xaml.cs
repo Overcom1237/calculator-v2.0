@@ -19,13 +19,12 @@ namespace calculator
             if (sing)
             {
                 Tb.Text = "-" + Tb.Text;
-                sing = false;
             }
             else
             {
                 Tb.Text = Tb.Text.Replace("-", "");
-                sing = true;
             }
+            sing = !sing;
         }
 
         private void Button_del(object sender, RoutedEventArgs e)
@@ -103,7 +102,10 @@ namespace calculator
 
         private void Button_result(object sender, RoutedEventArgs e)
         {
-            if (Tb.Text == "") Tb.Text = "0";
+            if (Tb.Text == "")
+            {
+                Tb.Text = "0";
+            }
             Col();
             x = 0;
             la.Content = "";
@@ -111,9 +113,12 @@ namespace calculator
 
         private void Button_sum(object sender, RoutedEventArgs e)
         {
-            if (Tb.Text == "") return;
+            if (Tb.Text == "")
+            {
+                return;
+            }
             else
-           if (x != 0) 
+            if (x != 0) 
             {
                 Col();
                 la.Content = y.ToString() + "+";
@@ -132,7 +137,10 @@ namespace calculator
 
         private void Button_difference(object sender,  RoutedEventArgs e)
         {
-            if (Tb.Text == "") return;
+            if (Tb.Text == "")
+            {
+                return;
+            }
             else
            if (x != 0)
             {
@@ -153,7 +161,10 @@ namespace calculator
 
         private void Button_multiplier(object sender, RoutedEventArgs e)
         {
-            if (Tb.Text == "") return;
+            if (Tb.Text == "")
+            {
+                return;
+            }
             else
            if (x != 0)
             {
@@ -174,7 +185,10 @@ namespace calculator
 
         private void Button_division(object sender, RoutedEventArgs e)
         {
-            if (Tb.Text == "") return;
+            if (Tb.Text == "")
+            {
+                return;
+            }
             else
             if (x != 0)
             {
